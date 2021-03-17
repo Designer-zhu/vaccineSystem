@@ -16,9 +16,9 @@
   <h1 class="hogo"><i><a href="${path}/index.jsp"> &nbsp;&nbsp;&nbsp;&nbsp;管理员&nbsp;&nbsp;&nbsp;&nbsp;登陆界面</a></i></h1>
 </div> 
 <section class="stark-login">
-  <form action="" method="">	
+  <form action="${pageContext.request.contextPath}/adminServlet?method=login" method="post">
     <div id="fade-box">
-      <input type="text" name="adminName" id="username" placeholder="管理员账户" required>
+      <input type="text" name="name" id="username" placeholder="管理员账户" required>
         <input type="password" name="password" id="password" placeholder="密码" required>
           
           <button type="submit">登 录</button>

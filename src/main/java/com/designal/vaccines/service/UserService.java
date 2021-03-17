@@ -4,6 +4,7 @@ import com.designal.vaccines.dao.UserDao;
 import com.designal.vaccines.entity.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @Description TODO
@@ -92,5 +93,27 @@ public class UserService {
             e.printStackTrace();
         }
         return false;
+    }
+
+    //查看省疾控中心人员列表
+    public List<User> viewProUserList(){
+        List<User> userList = null;
+        try {
+            userList = dao.selectProUserList();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
+
+    //查看市疾控中心人员列表
+    public List<User> viewCityUserList(){
+        List<User> userList = null;
+        try {
+            userList = dao.selectCityUserList();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
     }
 }

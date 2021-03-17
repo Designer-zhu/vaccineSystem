@@ -2,6 +2,7 @@ package com.designal.vaccines.dao;
 
 import com.designal.vaccines.entity.User;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @Description TODO
@@ -95,5 +96,17 @@ public class UserDao extends BasicDao<User> {
     public int updatePassword(User user) throws SQLException {
         String sql = "update pro_user set password = ? where user_id = ?";
         return this.update(sql,user.getPassword(),user.getUser_id());
+    }
+
+    //查看省疾控中心人员列表
+    public List<User> selectProUserList() throws SQLException {
+        String sql = "select * from pro_user";
+        return this.getBeanList(sql,User.class);
+    }
+
+    //查看市疾控中心人员列表
+    public List<User> selectCityUserList() throws SQLException {
+        String sql = "select * from city_user";
+        return this.getBeanList(sql,User.class);
     }
 }
