@@ -84,4 +84,14 @@ public class RequestMessService {
         }
         return false;
     }
+
+    //往requestmess表中插入
+    public boolean addToRequestMess(RequestMess requestMess){
+        try {
+            return dao.insert(requestMess)>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

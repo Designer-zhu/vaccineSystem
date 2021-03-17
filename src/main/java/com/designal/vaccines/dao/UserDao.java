@@ -17,13 +17,13 @@ public class UserDao extends BasicDao<User> {
 
         //判断用户类型
         if(user.getIdentity().equals("pro_user")){
-            sql = "insert into pro_user values(?,?,?,?,?,?,?,?,0,?,?)";
+            sql = "insert into pro_user values(?,?,?,?,?,?,?,'',0,?,?)";
         }else if(user.getIdentity().equals("city_user")){
-            sql = "insert into city_user values(?,?,?,?,?,?,?,?,0,?,?)";
+            sql = "insert into city_user values(?,?,?,?,?,?,?,'',0,?,?)";
         }
 
         return this.update(sql, user.getUser_id(), user.getUsername(), user.getPassword(), user.getSex(),
-                user.getEmail(), user.getBirthday(), user.getTelephone(), user.getPhoto(), user.getCode(),user.getIdentity());
+                user.getEmail(), user.getBirthday(), user.getTelephone(), user.getCode(),user.getIdentity());
     }
 
     //验证用户激活码 更新状态

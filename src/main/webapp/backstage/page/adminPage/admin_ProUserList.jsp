@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="${pageContext.request.contextPath}/layui/css/layui.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/layui/layui.js"></script>
+    <style>
+        .layui-table-cell{
+            height:100px;
+            line-height: 100px;
+        }
+    </style>
 </head>
 <body>
 
@@ -34,14 +40,16 @@
             ,cellMinWidth: 80 //全局定义常规单元格的最小宽度
             ,title: '疫苗信息表'
             ,cols: [[
-                {field: 'user_id', title: 'ID', sort: true, fixed: 'left'}
-                ,{field: 'username', title: '用户名'}
-                ,{field: 'sex', title: '性别'}
-                ,{field: 'email', title: '邮箱'}
-                ,{field: 'birthday', title: '出生日期',
+                {field: 'user_id', title: 'ID',width : 300, sort: true, fixed: 'left'}
+                ,{field: 'username', title: '用户名',width : 100}
+                ,{field: 'sex', title: '性别',width : 80}
+                ,{field: 'email', title: '邮箱',width : 200}
+                ,{field: 'birthday', title: '出生日期',width : 150,
                         templet: "<div>{{layui.util.toDateString(d.birthday, 'yyyy-MM-dd')}}</div>"}
-                ,{field: 'telephone', title: '电话'}
-                ,{field: 'photo', title: '头像'}
+                ,{field: 'telephone', title: '电话',width : 150}
+                ,{field: 'photo', title: '头像',width : 160,templet:function (d) {
+                        return '<div"><img src='+d.photo+'></div>'
+                    }}
             ]],
             parseData: function (rs) {//数据格式解析
                 console.log(rs);
@@ -57,6 +65,7 @@
         });
 
     });
+
 
 
 

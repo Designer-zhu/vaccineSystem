@@ -39,15 +39,15 @@
                     <a href="javascript:;">省疾控中心人员管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="${path}/backstage/page/adminPage/admin_ProUserList.jsp">查询人员列表</a></dd>
-                        <dd><a href="">添加省疾控中心人员</a></dd>
+                        <dd><a href="${path}/backstage/page/adminPage/pro_register.jsp">添加省疾控中心人员</a></dd>
                     </dl>
                 </li>
 
                 <li class="layui-nav-item">
                     <a href="javascript:;">市疾控中心人员管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="${path}/adminServlet?method=viewAllCity">查询人员列表</a></dd>
-                        <dd><a href="">添加市疾控中心人员</a></dd>
+                        <dd><a href="${path}/backstage/page/adminPage/admin_CityUserList.jsp">查询人员列表</a></dd>
+                        <dd><a href="${path}/backstage/page/adminPage/city_register.jsp">添加市疾控中心人员</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -57,7 +57,7 @@
 
     <!-- 内容主体区域 -->
     <div class="layui-body">
-        <h1 style="color: crimson">管理员页面</h1>
+        <h1 id="h1" style="color: crimson">管理员页面</h1>
         <iframe src="" id="main" name="content" height="100%" width="100%"></iframe>
 
     </div>

@@ -52,7 +52,7 @@
                             ${sessionScope.city_user.username}
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="${path}/backstage/page/cityPage/city_updateCity.jsp">基本资料</a></dd>
                         <dd><a href="">安全设置</a></dd>
                     </dl>
                 </li>
@@ -74,38 +74,14 @@
             <c:if test="${sessionScope.city_user != null}">
                 <ul class="layui-nav layui-nav-tree layui-bg-cyan"  lay-filter="test">
 
+
                     <li class="layui-nav-item">
-                        <a href="javascript:;">疫苗库存管理</a>
+                        <a href="javascript:;">疫苗入库管理</a>
                         <dl class="layui-nav-child">
-                            <dd>
-                                <a href="javascript:;" id="menu_three">库存盘点</a>
-                                <ol class="layui-nav-child" style="display: none;" >
-                                    <li><a href="">全部疫苗</a></li>
-                                    <li><a href="">一类疫苗</a></li>
-                                    <li><a href="">二类疫苗</a></li>
-                                </ol>
-                            </dd>
-                            <dd><a href="">疫苗期初建账</a></dd>
+                            <dd><a href="${pageContext.request.contextPath}/backstage/page/cityPage/vacc_request.jsp">疫苗入库</a></dd>
                         </dl>
                     </li>
 
-                    <li class="layui-nav-item">
-                        <a href="javascript:;">疫苗出库管理</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="">库存初期建账</a></dd>
-                            <dd><a href="javascript:;">疫苗入库</a></dd>
-                            <dd><a href="javascript:;">库存盘点</a></dd>
-                        </dl>
-                    </li>
-
-                    <li class="layui-nav-item">
-                        <a href="javascript:;">疫苗后台运维</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">管理一</a></dd>
-                            <dd><a href="javascript:;">管理二</a></dd>
-                            <dd><a href="">其它</a></dd>
-                        </dl>
-                    </li>
                 </ul>
             </c:if>
 
@@ -149,17 +125,6 @@
                     $('#h1').html("");
                     $('#main').attr("src",$(this).attr("href"));
                 });
-            });
-
-            //三级菜单
-            $("#menu_three").on("click",function(){
-                $(this).next().toggle();
-            })
-            $("ol").on("click","li a",function(){
-                $.each($(this).parent().siblings(),function(i,e){
-                    $(e).find("a").removeClass('three_this')
-                });
-                $(this).addClass('three_this');
             });
 
         });

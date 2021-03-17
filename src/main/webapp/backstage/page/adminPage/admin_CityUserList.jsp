@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>省疾控中心人员列表</title>
+    <title>市疾控中心人员列表</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="${pageContext.request.contextPath}/layui/css/layui.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <input type="hidden" id="path" value="${pageContext.request.contextPath}" />
 
     <%--表名--%>
-    <div id="h1" style="margin-left: 20px;margin-top: 10px"><h1  style="color: slategrey">省疾控中心人员列表</h1></div>
+    <div id="h1" style="margin-left: 20px;margin-top: 10px"><h1  style="color: slategrey">市疾控中心人员列表</h1></div>
     <hr />
 
     <%--数据表格--%>
@@ -35,7 +35,7 @@
         /*初始化表格*/
         var t = table.render({
             elem: '#test'
-            ,url: '/adminServlet?method=viewAllPro' //数据接口
+            ,url: '/adminServlet?method=viewAllCity' //数据接口
             /*,height: 'full-15' //!*/
             ,cellMinWidth: 80 //全局定义常规单元格的最小宽度
             ,title: '疫苗信息表'
@@ -65,7 +65,6 @@
         });
 
     });
-
 
 
 
