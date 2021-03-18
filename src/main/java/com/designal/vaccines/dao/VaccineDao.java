@@ -81,8 +81,7 @@ public class VaccineDao extends BasicDao<Vaccine> {
 
     //修改商品
     public int update(Vaccine vaccine) throws SQLException {
-        String sql = "update vaccine set v_name = ?,v_detail = ?," +
-                "v_site = ?,v_date = ?,v_term = ?,v_spec = ?,v_batch = ? where v_id = ?";
+        String sql = "update vaccine set v_name = ?,v_detail = ?,v_site = ?,v_date = ?,v_term = ?,v_spec = ?,v_batch = ? where v_id = ?";
         //System.out.println("1111111");
         return this.update(sql,vaccine.getV_name(),vaccine.getV_detail(),vaccine.getV_site(),
                 vaccine.getV_date(),vaccine.getV_term(),vaccine.getV_spec(),vaccine.getV_batch(),

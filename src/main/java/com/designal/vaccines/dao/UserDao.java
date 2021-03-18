@@ -86,8 +86,7 @@ public class UserDao extends BasicDao<User> {
 
     //修改信息
     public int updateOne(User user) throws SQLException {
-        String sql = "update pro_user set username = ?" +
-                ",sex = ?,email = ?,birthday = ?,telephone = ?,photo = ? where user_id = ?";
+        String sql = "update pro_user set username = ?,sex = ?,email = ?,birthday = ?,telephone = ?,photo = ? where user_id = ?";
         return this.update(sql,user.getUsername(),user.getSex(),user.getEmail(),user.getBirthday(),
                 user.getTelephone(),user.getPhoto(),user.getUser_id());
     }
